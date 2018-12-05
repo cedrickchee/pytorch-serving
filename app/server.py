@@ -84,19 +84,19 @@ async def analyze(request):
         print("modelName:", modelDefs[c]["name"])
         print("type of predictions[c]:", type(predictions[c]))
         print("prediction:", predictions[c])
-        print("textResult:", "modelName:" + modelDefs[c]["name"] + " - prediction:" + predictions[c])
+        print("textResult:", "modelName:" + modelDefs[c]["name"] + " - prediction:" + str(predictions[c]))
     return JSONResponse(
         {
             "textResult": [
                 "modelName:"
                 + modelDefs[c]["name"]
                 + " - prediction:"
-                + predictions[c]
+                + str(predictions[c])
                 + " -- "
                 for c in range(len(predictions))
             ],
             "result": [
-                {"modelName": modelDefs[c]["name"], "prediction": predictions[c]}
+                {"modelName": modelDefs[c]["name"], "prediction": str(predictions[c])}
                 for c in range(len(predictions))
             ],
         }

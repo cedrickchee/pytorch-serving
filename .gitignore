@@ -105,3 +105,6 @@ venv.bak/
 
 # Editor or IDE settings
 .vscode
+
+# PyTorch models
+*.pth

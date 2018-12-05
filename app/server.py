@@ -100,7 +100,7 @@ async def analyze(request):
     return JSONResponse(
         {
             "textResult": [
-                "<strong>modelName:</strong> "
+                "<strong>model name:</strong> "
                 + modelDefs[c]["name"]
                 + ", <strong>prediction:</strong> "
                 + str(predictions[c])

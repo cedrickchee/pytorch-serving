@@ -25,7 +25,13 @@ function analyze() {
         if (this.readyState === 4) {
             var response = JSON.parse(e.target.responseText);
             el('result-label').innerHTML = `<strong>Result:</strong><br />${response['textResult']}`;
-            el('top3-result-label').innerHTML = `<strong>Top-3 Result:</strong>${response['top_3_result']}`;
+            var payload = response['top_3_result'];
+            var top3res = '';
+            for (var i = 0; i < payload.length; i++) {
+                top3res += i + ') model name: ' + payload[i]['modelName'];
+                top3res += ', predictions: ' + payload[i]['prediction'] + '<br />';
+            }
+            el('top3-result-label').innerHTML = `<strong>Top-3 Result:</strong><br />${top3res}`;
         }
         el('analyze-button').innerHTML = 'Analyze';
     }

@@ -75,10 +75,11 @@ async def analyze(request):
     data = await request.form()
     img_bytes = await (data["file"].read())
     img = open_image(BytesIO(img_bytes))
+    predictions = []
     for learn in learners:
-        print("type of learn:", type(learn))
         print("prediction:", learn.predict(img)[0])
         predictions.append(learn.predict(img)[0])
+    print("length of predictions list:", len(predictions))
     return JSONResponse(
         {
             "textResult": [

@@ -1,0 +1,10 @@
+[
+    {
+        "name": "plantDisease",
+        "classes": ["blight", "mosaic", "powdery_mildew", "rust"],
+        "modelUrl": "https://drive.google.com/uc?id=1B23_HoLRFaap3jLY0bFi8zgs7ebhAJ_4&export=download",
+        "modelFileName": "stage-2",
+        "modelType": "resnet34",
+        "imageSize": 224
+    }
+]

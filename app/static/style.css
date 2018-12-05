@@ -45,6 +45,10 @@ body {
     margin-bottom: 5em;
 }
 
+.footer {
+    margin-top: 12em;
+}
+
 button.choose-file-button {
   width: 200px;
   height: 40px;

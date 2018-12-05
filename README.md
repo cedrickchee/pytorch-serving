@@ -2,7 +2,7 @@
 
 A production ready starter pack for creating a lightweight responsive web app for fast.ai [PyTorch](https://pytorch.org/) models using [Starlette](https://www.starlette.io/) framework with [Uvicorn](https://www.uvicorn.org/) ASGI server for model serving.
 
-**Demo**: [PlantDoc - the digital plant doctor](https://plantdoc.now.sh/).
+**Demo**: [PlantDoc - the digital plant doctor](https://plantdoc.ml).
 
 ## Starlette
 

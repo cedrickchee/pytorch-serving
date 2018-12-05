@@ -52,7 +52,7 @@ async def setup_learners():
         data_bunch = ImageDataBunch.single_from_classes(
             path, m["classes"], tfms=get_transforms(), size=m["imageSize"]
         ).normalize(imagenet_stats)
-        learn = create_cnn(data_bunch, modelTypes[m["modelType"]], pretrained=False)
+        learn = create_cnn(data_bunch, modelTypes[m["modelType"]])
         learn.load(m["modelFileName"])
         learners.append(learn)
     return learners

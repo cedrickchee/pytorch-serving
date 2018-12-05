@@ -80,22 +80,8 @@ async def analyze(request):
         print("prediction:", learn.predict(img)[0])
         predictions.append(learn.predict(img)[0])
     print("length of predictions list:", len(predictions))
-    return JSONResponse(
-        {
-            "textResult": [
-                "modelName:"
-                + modelDefs[c]["name"]
-                + " - prediction:"
-                + predictions[c]
-                + " -- "
-                for c in range(len(predictions))
-            ],
-            "result": [
-                {"modelName": modelDefs[c]["name"], "prediction": predictions[c]}
-                for c in range(len(predictions))
-            ],
-        }
-    )
+    return JSONResponse({'textResult': ['modelName:' + modelDefs[c]['name'] + ' - prediction:' + predictions[c] + ' -- ' for c in range(len(predictions))],
+                        'result': [{'modelName':modelDefs[c]['name'],'prediction':predictions[c]} for c in range(len(predictions))]})
 
 
 if __name__ == "__main__":
